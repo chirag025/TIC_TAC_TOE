@@ -1,3 +1,4 @@
+/* Existing Styles */
 *,*::after, *::before{
     margin: 0;
     padding: 0;
@@ -13,17 +14,17 @@
     display: grid;
     place-items: center;
     position: relative;
-    padding: 1rem; /* Added padding for better spacing */
+    padding: 1rem;
 }
 
 .game-status{
     color: white;
     position: absolute;
-    top: 1rem; /* Reduced top spacing */
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 1.5rem; /* Adjusted padding */
+    padding: 0.5rem 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     font-size: 1rem;
@@ -34,25 +35,27 @@
     width: 100%;
     max-width: 20rem;
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     aspect-ratio: 1/1;
-    margin: 3rem 0; /* Adjusted margin for better centering */
+    margin: 3rem 0;
+    touch-action: manipulation; /* Prevent zooming or panning when interacting */
 }
 
 .box{
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    font-size: 2rem; /* Reduced font size */
+    font-size: 2rem;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    user-select: none; /* Prevent text selection */
 }
 
 .box1, .box2, .box4, .box5{
@@ -75,7 +78,7 @@
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 1.5rem; /* Adjusted padding */
+    padding: 0.5rem 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     cursor: pointer;
@@ -91,6 +94,7 @@
     background-color: rgba(0, 255, 0, 0.3);
 }
 
+/* Responsive Styling */
 @media (max-width: 600px) {
     .game-status {
         top: 0.5rem;
@@ -100,10 +104,25 @@
 
     .tic-tac-toe {
         padding: 1rem;
-        margin: 2rem 0; /* Further reduce the margin */
+        margin: 2rem 0;
     }
 
     .box {
         font-size: 1.5rem;
     }
 }
+
+/* Additional Safeguards */
+.tic-tac-toe, .box {
+    overflow: hidden;
+}
+
+.tic-tac-toe:focus, .box:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.tic-tac-toe, .box {
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth interaction */
+}
+
