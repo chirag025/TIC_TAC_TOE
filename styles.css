@@ -8,43 +8,46 @@
 .wrapper{
     min-height: 100vh;
     background-image: url(./assets/background_gradient.jpg);
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     display: grid;
     place-items: center;
     position: relative;
+    padding: 1rem; /* Added padding for better spacing */
 }
 
 .game-status{
     color: white;
     position: absolute;
-    top: 3rem;
+    top: 1rem; /* Reduced top spacing */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 1.5rem; /* Adjusted padding */
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 1rem;
+    text-align: center;
 }
 
 .tic-tac-toe{
-    width: 60%;
+    width: 100%;
     max-width: 20rem;
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced padding */
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     aspect-ratio: 1/1;
-    margin: 7rem;
+    margin: 3rem 0; /* Adjusted margin for better centering */
 }
 
 .box{
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    font-size: 3rem;
+    font-size: 2rem; /* Reduced font size */
     color: white;
     display: flex;
     justify-content: center;
@@ -68,16 +71,16 @@
 .newBtn{
     color: white;
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem; /* Adjusted padding */
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.25);
     cursor: pointer;
-
     display: none;
+    font-size: 1rem;
 }
 
 .newBtn.active{
@@ -86,4 +89,21 @@
 
 .win{
     background-color: rgba(0, 255, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+    .game-status {
+        top: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .tic-tac-toe {
+        padding: 1rem;
+        margin: 2rem 0; /* Further reduce the margin */
+    }
+
+    .box {
+        font-size: 1.5rem;
+    }
 }
