@@ -114,14 +114,10 @@
 /* Additional Safeguards */
 .tic-tac-toe, .box {
     overflow: hidden;
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth interaction */
 }
 
 .tic-tac-toe:focus, .box:focus {
     outline: none;
     box-shadow: none;
 }
-
-.tic-tac-toe, .box {
-    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth interaction */
-}
-
