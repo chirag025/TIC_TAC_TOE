@@ -73,7 +73,7 @@
 .newBtn{
     color: white;
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.15);
@@ -108,6 +108,10 @@
 
     .box {
         font-size: 1.5rem;
+    }
+
+    .newBtn{
+        bottom: 3rem;
     }
 }
 
