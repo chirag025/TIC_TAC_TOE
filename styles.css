@@ -96,7 +96,7 @@
 /* Responsive Styling */
 @media (max-width: 600px) {
     .game-status {
-        top: 0.5rem;
+        top: 2.5rem;
         padding: 0.5rem 1rem;
         font-size: 0.875rem;
     }
